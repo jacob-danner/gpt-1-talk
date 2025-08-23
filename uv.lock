@@ -447,7 +447,7 @@ wheels = [
 ]
 
 [[package]]
-name = "gpt-1-talk"
+name = "dissecting-gpt"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

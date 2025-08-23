@@ -1,7 +1,7 @@
 [project]
-name = "gpt-1-talk"
+name = "dissecting-gpt"
 version = "0.1.0"
-description = "gpt-1-talk"
+description = "dissecting-gpt"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
