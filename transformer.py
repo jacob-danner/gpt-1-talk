@@ -93,9 +93,10 @@ class Transformer(nn.Module):
         self.softmax = nn.Softmax(dim=-1)
 
     def forward(self, tokens):  # 'batch tokens'
-        residual_stream = self.token_embed(tokens) + self.pos_embed(
-            tokens
-        )  # note that "self.pos_embed(tokens)" is not valid, we would want position ids
+        seq_len = tokens.shape[1]
+        position_ids = torch.arange(seq_len)
+
+        residual_stream = self.token_embed(tokens) + self.pos_embed(position_ids)
         residual_stream = self.h(residual_stream)
         distribution = self.softmax(self.unembed(residual_stream))
         return distribution
